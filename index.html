@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Para Abby 🌼💛</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to top, #fceabb, #f8b500);
+    overflow: hidden;
+    text-align: center;
+}
+
+/* Título */
+h1 {
+    margin-top: 40px;
+    font-size: 2.5em;
+    color: #fff;
+    animation: aparecer 2s ease-in-out;
+}
+
+/* Carta */
+.carta {
+    background: rgba(255,255,255,0.9);
+    width: 80%;
+    max-width: 400px;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    animation: subir 2s ease;
+}
+
+.carta p {
+    font-size: 18px;
+    color: #444;
+}
+
+/* Flores */
+.flor {
+    position: absolute;
+    font-size: 28px;
+    animation: caer linear infinite;
+}
+
+/* Animaciones */
+@keyframes caer {
+    0% {
+        top: -10%;
+        transform: translateX(0) rotate(0deg);
+    }
+    100% {
+        top: 100%;
+        transform: translateX(50px) rotate(360deg);
+    }
+}
+
+@keyframes aparecer {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes subir {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Corazón */
+.corazon {
+    font-size: 30px;
+    animation: latido 1s infinite;
+}
+
+@keyframes latido {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+</style>
+</head>
+
+<body>
+
+<h1>Para Abby 🌼💛</h1>
+
+<div class="carta">
+    <p>
+        No sabía cómo darte flores amarillas…<br><br>
+        así que decidí hacer algo diferente 💛<br><br>
+        Abby, eres alguien muy especial para mí ✨<br><br>
+        y aunque esto no sean flores reales…<br><br>
+        cada una de ellas lleva un pedacito de lo que siento por ti 🌼
+    </p>
+
+    <div class="corazon">💛</div>
+</div>
+
+<script>
+function crearFlor() {
+    const flor = document.createElement("div");
+    flor.classList.add("flor");
+    flor.innerHTML = "🌼";
+
+    flor.style.left = Math.random() * 100 + "vw";
+    flor.style.animationDuration = (Math.random() * 4 + 3) + "s";
+
+    document.body.appendChild(flor);
+
+    setTimeout(() => {
+        flor.remove();
+    }, 7000);
+}
+
+setInterval(crearFlor, 400);
+</script>
+
+</body>
+</html>
